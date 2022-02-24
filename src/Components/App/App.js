@@ -4,14 +4,20 @@ import SearchBar from 'src/Components/SearchBar/SearchBar.js'
 import SearchResults from 'src/Components/SearchResults/SearchResults.js'
 
 function App() {
+  constructor(props){
+    super(props);
+    this.state = { searchResults:[] };
+  }
+
+
   return (
     <div>
       <h1>Ja<span className="highlight">mmm</span>ing</h1>
       <div className="App">
-        <!-- Add a SearchBar component -->
+        <SearchBar/>
         <div className="App-playlist">
-          <!-- Add a SearchResults component -->
-          <!-- Add a Playlist component -->
+          <SearchResults searchResults={this.state.searchResults}/>
+          <Playlist/>
         </div>
       </div>
     </div>
